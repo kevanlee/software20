@@ -45,6 +45,7 @@
 
 html {
   color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -175,6 +176,10 @@ img {
   margin-left: auto;
 }
 
+.main-nav-actions .button {
+  white-space: nowrap;
+}
+
 .button,
 .signup-action,
 .signup-form button,
@@ -217,7 +222,6 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
 }
 
@@ -231,6 +235,13 @@ img {
   background-size: cover;
   width: 100%;
   padding: 84px 24px 96px;
+}
+
+.content-section,
+.footer-inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
 }
 
 .hero h1,
@@ -257,7 +268,23 @@ img {
   text-align: center;
 }
 
-.hero .button,
+.panel-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-links,
+.score-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .button.primary,
 .submit-button.is-ready,
 .signup-form button.is-ready {
@@ -271,7 +298,7 @@ img {
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 24px 72px;
+  padding: 40px 24px 72px;
 }
 
 .logo-bar-copy {
@@ -279,7 +306,14 @@ img {
   text-align: center;
 }
 
-.logo-bar-copy p,
+.logo-bar-copy h2 {
+  margin: 0;
+  font-family: "Cooper Hewitt", "Inter", system-ui, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
 .signup-secondary,
 .field-help {
   margin: 0;
@@ -318,6 +352,133 @@ img {
   letter-spacing: -0.02em;
 }
 
+.logo-chip img {
+  display: block;
+  width: auto;
+  height: 24px;
+}
+
+.compact-card,
+.score-shell,
+.score-card {
+  border: 1px solid var(--border);
+  border-radius: var(--card-radius);
+  background: rgba(251, 252, 248, 0.92);
+  box-shadow: 0 18px 40px rgba(17, 17, 17, 0.04);
+}
+
+.content-section {
+  padding: 0 24px 72px;
+}
+
+.compact-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compact-card {
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.compact-card h2,
+.score-copy h2 {
+  margin: 0;
+  font-family: "Cooper Hewitt", "Inter", system-ui, sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.compact-card h2 {
+  font-size: clamp(1.6rem, 3vw, 2.15rem);
+  line-height: 1;
+}
+
+.compact-card p:last-child {
+  margin: 0;
+}
+
+.score-shell {
+  display: grid;
+  gap: 24px;
+  padding: 28px;
+}
+
+.score-copy {
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+
+.score-copy h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.98;
+}
+
+.score-copy p {
+  margin: 0;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.score-card {
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: none;
+  text-align: center;
+}
+
+.score-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.06em;
+}
+
+.score-card span {
+  color: var(--muted);
+}
+
+.footer-chunky {
+  padding: 56px 24px;
+  background: #111111;
+  border-top: 0;
+}
+
+.footer-chunky-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto auto;
+  align-items: start;
+  gap: 28px;
+}
+
+.footer-brand {
+  display: grid;
+  gap: 16px;
+}
+
+.footer-brand img {
+  width: 132px;
+}
+
+.footer-brand p,
+.footer-cta p,
+.footer-chunky .footer-links a {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.footer-cta {
+  display: grid;
+  gap: 16px;
+  justify-items: start;
+}
+
 @keyframes marquee-right {
   from {
     transform: translateX(-50%);
@@ -329,10 +490,40 @@ img {
 }
 
 .footer {
-  text-align: center;
   padding: 24px;
   background-color: #ffffff;
   border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer-chunky .footer-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto auto;
+  align-items: start;
+  gap: 28px;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-links a {
+  color: var(--muted);
+}
+
+.footer-links a:hover,
+.menu ul li a:hover {
+  color: var(--text);
+}
+
+.footer-chunky .footer-links a:hover {
+  color: #ffffff;
 }
 
 body.is-scrolled .announcement-bar {
@@ -724,6 +915,65 @@ body.is-scrolled .announcement-bar {
 }
 
 @media (max-width: 720px) {
+  .main-nav {
+    padding: 14px 16px;
+  }
+
+  .main-nav-container {
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .menu ul {
+    width: max-content;
+    padding-bottom: 4px;
+  }
+
+  .hero {
+    padding: 56px 16px 72px;
+  }
+
+  .compact-grid,
+  .score-grid,
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .score-actions,
+  .footer-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-chunky .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .score-actions .button {
+    width: 100%;
+  }
+
+  .content-section,
+  .logo-bar-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .footer-chunky {
+    padding: 40px 16px;
+  }
+
   .main-content.signup {
     flex-direction: column;
   }
