@@ -2,7 +2,8 @@
 
 ## Files
 
-- `/Users/kevanlee/Desktop/software20/index.html`: semantic homepage with inline comments
+- `/Users/kevanlee/Desktop/software20/index.html`: current homepage
+- `/Users/kevanlee/Desktop/software20/landing.html`: previous landing page
 - `/Users/kevanlee/Desktop/software20/home.css`: very small homepage stylesheet
 - `/Users/kevanlee/Desktop/software20/scan-setup.html`: setup step 1
 - `/Users/kevanlee/Desktop/software20/scan-competitors.html`: setup step 2
@@ -15,7 +16,6 @@
 ## How to edit quickly
 
 - Change homepage copy directly in `/Users/kevanlee/Desktop/software20/index.html`
-- Use the comments in `/Users/kevanlee/Desktop/software20/index.html` as the editing guide for each section
 - Change colors in the `:root` block at the top of `/Users/kevanlee/Desktop/software20/home.css` or `/Users/kevanlee/Desktop/software20/app.css`.
 - Change spacing by editing `padding` on `.page-section`, `.panel`, and the header/footer blocks.
 - Change layout by editing these grid classes in `/Users/kevanlee/Desktop/software20/app.css`:
